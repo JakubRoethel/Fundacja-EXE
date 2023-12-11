@@ -1,0 +1,15 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    .content-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px 0px 0px 160px;
+    }
+
+    .img-wrapper {
+        flex: 1;
+    }
+}

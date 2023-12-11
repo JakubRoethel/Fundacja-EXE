@@ -1,0 +1,20 @@
+.site-main {
+    padding: 80px 100px 0px 100px;
+
+    .blog-header{
+        .entry-title {
+            font-weight: 600;
+            color: $color_brand;
+            margin-bottom: 80px;
+        }
+    }
+
+   
+
+    .blog-posts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 18px;
+        grid-row-gap: 60px;
+    }
+}

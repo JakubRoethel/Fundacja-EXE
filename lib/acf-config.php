@@ -1,14 +1,14 @@
 <?php 
 function studio_add_options_pages() {
 
-// acf_add_options_page(array(
-//     'page_title'    => 'Theme General Settings',
-//     'menu_title'    => 'Theme Settings',
-//     'menu_slug'     => 'theme-general-settings',
-//     'capability'    => 'edit_posts',
-//     'redirect'      => false,
-//     'post_id' => 'general_settings'
-// ));
+acf_add_options_page(array(
+    'page_title'    => 'Theme General Settings',
+    'menu_title'    => 'Theme Settings',
+    'menu_slug'     => 'theme-general-settings',
+    'capability'    => 'edit_posts',
+    'redirect'      => false,
+    'post_id' => 'general_settings'
+));
 
 // acf_add_options_sub_page(array(
 //     'page_title'    => 'Theme Header Settings',

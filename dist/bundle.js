@@ -26,7 +26,27 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/main.scss */ \"./src/css/main.scss\");\n\n\n//# sourceURL=webpack://fundacja-exe/./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/main.scss */ \"./src/css/main.scss\");\n/* harmony import */ var _modules_hover__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/hover */ \"./src/js/modules/hover.js\");\n/* harmony import */ var _modules_swiper_objects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/swiper-objects */ \"./src/js/modules/swiper-objects.js\");\n\n\n\n\n(0,_modules_hover__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n(0,_modules_swiper_objects__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n\n//# sourceURL=webpack://fundacja-exe/./src/js/main.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/hover.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/hover.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ hoverService)\n/* harmony export */ });\nfunction hoverService() {\n  // Pobieranie wszystkich elementów nawigacji\n  const navItems = document.querySelectorAll('.slider-title-wrapper');\n  \n  // Pobieranie wszystkich zawartości\n  const singleSlides = document.querySelectorAll('.single-slide');\n  \n  // Przypisanie klasy active dla pierwszego elementu nawigacji i pierwszej zawartości\n  navItems[0].classList.add('active');\n  singleSlides[0].classList.add('active-slide');\n\n  // Iterowanie przez elementy nawigacji\n  navItems.forEach((navItem, index) => {\n    // Zmiana nasłuchiwacza z kliknięcia na najechanie myszką (hover)\n    navItem.addEventListener('mouseover', () => {\n      // Usunięcie klasy active ze wszystkich elementów nawigacji\n      navItems.forEach((item) => {\n        item.classList.remove('active');\n      });\n\n      // Dodanie klasy active do najechanego elementu nawigacji\n      navItem.classList.add('active');\n\n      // Usunięcie klasy active-slide ze wszystkich zawartości\n      singleSlides.forEach((slide) => {\n        slide.classList.remove('active-slide');\n      });\n\n      // Dodanie klasy active-slide do odpowiedniej zawartości zgodnie z indeksem\n      singleSlides[index].classList.add('active-slide');\n    });\n  });\n}\n\n\n//# sourceURL=webpack://fundacja-exe/./src/js/modules/hover.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/swiper-objects.js":
+/*!******************************************!*\
+  !*** ./src/js/modules/swiper-objects.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ swiperService)\n/* harmony export */ });\nfunction swiperService() {\n\n  var swiper1 = new Swiper(\".swiper\", {\n    effect: \"slide\",\n    grabCursor: true,\n    centeredSlides: false,\n    slidesPerView: \"3\",\n    spaceBetween: 0,\n    loop: true,\n    autoplay: {\n      delay: 3000,\n    },\n    spaceBetween: 17,\n    navigation: {\n      nextEl: \".swiper-button-next\",\n      prevEl: \".swiper-button-prev\",\n    },\n  });\n  \n}\n\n\n//# sourceURL=webpack://fundacja-exe/./src/js/modules/swiper-objects.js?");
 
 /***/ })
 
@@ -57,6 +77,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports

@@ -1,5 +1,7 @@
 <?php
 
+require_once('lib/acf-config.php');
+
 function studio_scripts()
 {
     wp_enqueue_script('acf-input', get_template_directory_uri() . '/js/acf-input.min.js', array('jquery'), '', true);
@@ -14,45 +16,37 @@ function studio_scripts()
 }
 
 add_action('wp_enqueue_scripts', 'studio_scripts');
+	
+add_theme_support( 'post-thumbnails' );
 
 add_theme_support('custom-logo');
-
-/**
- * Set WooCommerce image dimensions upon theme activation
- */
-// Remove each style one by one
-// add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
-// function jk_dequeue_styles( $enqueue_styles ) {
-// 	// unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
-// 	// unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
-// 	// unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
-// 	return $enqueue_styles;
-// }
+add_theme_support('menus');
 
 
-/* Let's add Apple logo for 'apple' brand term */
-add_filter('wpc_filters_label_term_html', 'wpc_term_brand_logoo', 10, 4);
-function wpc_term_brand_logoo($html, $link_attributes, $term, $filter)
+// excerpt length 
+function my_excerpt_length($length)
 {
-    if ($filter['ID'] == 317 || $filter['ID'] == 777 ) {
+    return 20;
+}
+add_filter('excerpt_length', 'my_excerpt_length');
 
-        if ($term->term_id === 45) {
-            //id = 45 is bubbles
-            $img  = '<img src="' . get_stylesheet_directory_uri() . '/assets/img/bubbles.svg" alt="' . $term->name . '" width="15" height="15" />';
-            $html = '<a ' . $link_attributes . '>' . $img . ' ' . $term->name . '</a>';
-        } else if ($term->term_id === 46) {
-            //water
-            $img  = '<img src="' . get_stylesheet_directory_uri() . '/assets/img/water.svg" alt="' . $term->name . '" width="15" height="15" />';
-            $html = '<a ' . $link_attributes . '>' . $img . ' ' . $term->name . '</a>';
-        } else {
-            $img  = '<img src="' . get_stylesheet_directory_uri() . '/assets/img/' . $term->slug . '.svg" alt="' . $term->name . '" width="15" height="15" />';
-            $html = '<a ' . $link_attributes . '>' . $img . ' ' . $term->name . '</a>';
-        }
-    }
-    return $html;
+// excerpt "[]" Delete
+
+function new_excerpt_more( $more ) {
+    return '';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+// svg upload 
+function enable_svg_upload( $upload_mimes ) {
+    $upload_mimes['svg'] = 'image/svg+xml';
+    $upload_mimes['svgz'] = 'image/svg+xml';
+    return $upload_mimes;
+
 }
 
-require_once('lib/acf-config.php');
+add_filter( 'upload_mimes', 'enable_svg_upload', 10, 1 );
 
+?>
 
 

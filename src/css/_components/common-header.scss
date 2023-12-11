@@ -1,5 +1,49 @@
 .header {
-    min-height: 200px;
-    background-color: blue;
-    display: block;
+    min-height: 100px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 100px;
+
+    .header_logo {
+        max-height: 70px;
+        display: flex;
+        a {
+            display: block;
+            img {
+                height: 100%;
+            }
+        }
+    }
+
+    .menu_container{
+        ul {
+            display: flex;
+            gap: 48px
+        }
+    }
+
+    .button-wrapper {
+        background-color: $color_brand;
+        padding: 12px 35px;
+        border-radius:50px ;
+        border: 1px solid $color_brand;
+        &:hover {
+            background-color: $color_white;
+            
+
+            a{
+                color: $color_brand;
+            }
+        }
+
+
+        a{
+            color: $color_white;
+        }
+        
+    }
+
+
 }

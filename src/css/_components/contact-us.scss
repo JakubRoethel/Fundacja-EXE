@@ -1,0 +1,40 @@
+.contact-us {
+    padding: 198px 170px 0px 170px;
+
+    .content-wrapper {
+        padding: 32px 67px;
+        background-color: $color_bg;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .text-container {
+            .title,
+            .description {
+                color: $color_white;
+            }
+
+            .title {
+                font-weight: 700;
+            }
+        }
+
+        .button-wrapper {
+            background-color: $color_brand;
+            padding: 12px 35px;
+            border-radius:50px ;
+            &:hover {
+                background-color: $color_white;
+    
+                a{
+                    color: $color_brand;
+                }
+            }
+
+            a{
+                color: $color_white;
+            }
+            
+        }
+    }
+}

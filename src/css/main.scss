@@ -12,18 +12,40 @@
  
  @import "_vendor/reset";
  @import "_vendor/normalize";
- 
 
- /* ELEMENTS
+
+ /* FONTS 
  * ------------------------------------------------------------------------- */
+ @import "_global/webfonts";
 
-// @import "_global/_components/logo";
-
-//*COMPONENTS
-
-//*HEADER
-
+ /*HEADER
+* ------------------------------------------------------------------------- */
 @import "./_components/common-header.scss";
+
+
+ /*COMPONENTS
+* ------------------------------------------------------------------------- */
+
+@import "./_components/hero.scss";
+
+@import "./_components/about.scss";
+
+@import "./_components/how-we-support.scss";
+
+@import "./_components/contact-us.scss";
+
+@import "./_components/sliders.scss";
+
+
+
+@import "./_components/entry.scss";
+
+@import "./_components/blog.scss";
+
+
+
+
+
 
 
 

@@ -14,11 +14,12 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <script src="https://apis.google.com/js/api.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> 
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" /> 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
   <?php wp_head(); ?>
 
 </head>
 <body <?php body_class(); ?>>
   <?php get_template_part('views/common', 'header'); ?>
-  <?php get_template_part('views/common', 'preloader'); ?>

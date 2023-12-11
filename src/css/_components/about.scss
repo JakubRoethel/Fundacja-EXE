@@ -1,0 +1,102 @@
+.about-section {
+    padding: 126px 170px 0px 170px;
+
+    .section-heading-wrapper {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .subtitle,
+        .title,
+        .short-description {
+            text-align: center;
+        }
+
+        .subtitle {
+            color: $color_brand;
+            font-weight: 600;
+        }
+
+        .title {
+            font-weight: 700;
+        }
+        .short-description {
+            max-width: 850px;
+        }
+    }
+
+    .img-text-wrapper {
+        margin-top: 26px;
+        display: flex;
+        gap: 48px;
+
+        .img-container {
+            flex: 1;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .text-container {
+            flex: 1;
+            padding: 22px 0px;
+
+            .text-title {
+                font-weight: 600;
+                padding-bottom: 32px;
+            }
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    }
+
+    .icon-wrapper {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        margin-top: 56px;
+        gap: 32px;
+
+        .icon-container {
+            background-color: $color_white;
+            box-shadow:
+                0px 8px 8px -4px rgba(16, 24, 40, 0.03),
+                0px 20px 24px -4px rgba(16, 24, 40, 0.08);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.5s ease;
+
+            &:hover {
+                background-color: $color_brand;
+                transition: background-color 0.5s ease;
+
+                p {
+                    color: $color_white;
+                }
+            }
+
+            .img_container {
+                min-height: 157px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .icon-title {
+                font-weight: 600;
+            }
+
+            .icon-description {
+                padding-top: 10px;
+                max-width: 270px;
+                text-align: center;
+                font-size: 18px;
+            }
+        }
+    }
+}

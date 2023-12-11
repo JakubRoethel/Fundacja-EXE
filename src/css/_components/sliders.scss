@@ -1,0 +1,47 @@
+.sliders {
+    padding: 180px 85px 0px 85px;
+    margin-bottom: 126px;
+    .section-heading-wrapper {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 32px;
+        .subtitle,
+        .title,
+        .short-description {
+            text-align: center;
+        }
+
+        .subtitle {
+            color: $color_brand;
+            font-weight: 600;
+        }
+
+        .title {
+            font-weight: 700;
+        }
+        .short-description {
+            max-width: 850px;
+        }
+    }
+    .swiper-container {
+        position: relative;
+
+        .swiper-button-next {
+            right:-60px !important;
+            width: 55px !important;
+            height: 55px !important;
+            color: $color_bg !important;
+        }
+
+        .swiper-button-prev {
+            left:-60px !important;
+            right:-60px !important;
+            width: 55px !important;
+            height: 55px !important;
+            color: $color_bg !important;
+        }
+        
+    }
+}
