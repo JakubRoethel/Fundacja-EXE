@@ -47,6 +47,49 @@ function enable_svg_upload( $upload_mimes ) {
 
 add_filter( 'upload_mimes', 'enable_svg_upload', 10, 1 );
 
-?>
+// add after text in menu items
+
+add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+
+function my_wp_nav_menu_objects( $items, $args ) {
+    
+
+    foreach( $items as &$item ) {
+        
+
+        $menu_item_after_text = get_field('menu_item_after_text', $item);
+
+        if( $menu_item_after_text ) {
+            
+            $item->title .= '<span class="menu-item-after-text">' . $menu_item_after_text . '</span>';
+            
+        }
+        
+    }
+    
+    
+    return $items;
+    
+}
+
+
+//update checker
+
+require 'plugin-update-checker/plugin-update-checker.php';
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+    'https://github.com/JakubRoethel/Fundacja-EXE.git',
+    __FILE__,
+    'Fundacja-EXE'
+);
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
+//Optional: If you're using a private repository, specify the access token like this:
+$myUpdateChecker->setAuthentication('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');
+
+
+
 
 

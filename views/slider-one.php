@@ -17,7 +17,7 @@ $query = new WP_Query($args);
 
 ?>
 
-<div class="sliders sliders-section slider-one">
+<div class="sliders sliders-section slider-one" id="slider-one">
     <div class="section-heading-wrapper">
         <?php if ($subTitle) : ?>
             <h3 class="subtitle">
@@ -35,8 +35,8 @@ $query = new WP_Query($args);
             </p>
         <?php endif; ?>
     </div>
-    <div class="swiper-container ">
-        <div class="swiper">
+    <div class="swiper-container">
+        <div class="swiper swiper-one">
             <div class="swiper-wrapper">
                 <?php while ($query->have_posts()) : $query->the_post(); ?>
                     <div class="swiper-slide">
@@ -45,9 +45,10 @@ $query = new WP_Query($args);
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+
     </div>
 
 </div>

@@ -1,11 +1,11 @@
-.entry-summary{
+.entry-summary {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 9px;
-    box-shadow: 0px 8px 8px -4px rgba(16, 24, 40, 0.03), 0px 20px 24px -4px rgba(16, 24, 40, 0.08);
+  
 
-    a{
+    a {
         width: 100%;
         img {
             width: 100%;
@@ -13,45 +13,65 @@
         }
     }
 
-    .post-short-description {
-        padding: 0px 32px;
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        box-shadow:
+        0px 8px 8px -4px rgba(16, 24, 40, 0.03),
+        0px 20px 24px -4px rgba(16, 24, 40, 0.08);
 
-        .entry-title{
-            font-size: 20px;
-            font-weight: 600;
-            color: $color_brand;
-            text-align: center;
-            min-height: 60px;
-        }
-    
-        .description {
-            p {
-                font-size: 18px;
-                text-align: center;
+        .post-short-description {
+            padding: 0px 32px;
+            @include bp($bp-mobile) {
+                padding: 0px 8px;
             }
-        }
 
-    }
-
-
-    .button-wrapper {
-        margin: 28px 0px 32px 0px;
-        background-color: $color_brand;
-        padding: 12px 35px;
-        border-radius:50px ;
-        border: 1px solid $color_brand;
-        &:hover {
-            background-color: $color_white;
-        
-
-            a{
+            .entry-title {
+                font-size: 20px;
+                font-weight: 600;
                 color: $color_brand;
+                text-align: center;
+                min-height: 60px;
+
+                @include bp($bp-mobile) {
+                    font-size: 18px;
+                }
+            }
+
+            .description {
+                p {
+                    font-size: 18px;
+                    text-align: center;
+
+                    @include bp($bp-mobile) {
+                        font-size: 16px;
+                    }
+                }
             }
         }
 
-        a{
-            color: $color_white;
+        .button-wrapper {
+            margin: 28px 0px 32px 0px;
+            background-color: $color_brand;
+            padding: 12px 35px;
+            border-radius: 50px;
+            border: 1px solid $color_brand;
+            display: inline-block;
+            align-self: center;
+            &:hover {
+                background-color: $color_white;
+
+                a {
+                    color: $color_brand;
+                    @include bp($bp-mobile) {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            a {
+                color: $color_white;
+            }
         }
-        
     }
 }

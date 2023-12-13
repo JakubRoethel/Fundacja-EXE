@@ -30,4 +30,22 @@ export default function hoverService() {
       singleSlides[index].classList.add('active-slide');
     });
   });
+
+
+  const hoverItems = document.querySelectorAll('.slider-one .entry-summary');
+  const contentWrappers = document.querySelectorAll('.slider-one .entry-summary .content-wrapper');
+  
+  hoverItems.forEach((hoverItem, index) => {
+    const contentWrapper = contentWrappers[index];
+  
+    hoverItem.addEventListener('mouseover', () => {
+      contentWrapper.classList.add('show');
+    });
+  
+    hoverItem.addEventListener('mouseout', () => {
+      contentWrapper.classList.remove('show');
+    });
+  });
+
+
 }

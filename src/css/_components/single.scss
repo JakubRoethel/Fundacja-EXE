@@ -1,0 +1,137 @@
+.single-post-main-container {
+    display: flex;
+    gap: 32px;
+
+    @include bp($bp-mobile) {
+        flex-direction: column;
+    }
+    .left-column {
+        flex: 3;
+
+        .blog-single-posts {
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+
+            .post-title {
+                font-size: $h2_font_size;
+                color: $color_brand;
+                font-weight: 700;
+                line-height: 120%;
+                padding: 32px 0px 16px 0px;
+                @include bp($bp-mobile) {
+                    font-size: 1.75rem;
+                }
+            }
+
+            .post-content {
+                .wp-block-image {
+                    img {
+                        width: 100% !important;
+                        height: auto !important;
+                        object-fit: cover;
+                        margin-top: 48px;
+                    }
+                }
+
+                h2 {
+                    font-size: $h3_font_size;
+                    padding: 48px 0px 8px 0px;
+                    @include bp($bp-mobile) {
+                        font-size: 1.25rem;
+                    }
+                }
+
+                p {
+                    line-height: 150%;
+                    padding-bottom: 8px;
+                }
+
+                a {
+                    color: $color_brand;
+                }
+
+                .wp-block-group {
+                    figure {
+                        width: 100% !important;
+                    }
+                }
+            }
+
+            .share-container {
+                padding: 96px 0px;
+
+                @include bp($bp-mobile) {
+                    padding: 40px 0px;
+                }
+
+                p {
+                    font-size: 24px;
+                    font-weight: 600;
+                    padding-bottom: 36px;
+                }
+
+                .heateor_sss_sharing_container {
+                    .heateor_sss_sharing_ul {
+                        display: flex;
+                        gap: 36px;
+                    }
+                }
+            }
+
+            .related-posts {
+                .related-title {
+                    font-weight: 600;
+                    padding-bottom: 32px;
+                }
+            }
+        }
+    }
+
+    .right-column {
+        flex: 1;
+        position: relative;
+
+        .right-column-content {
+            height: 100%;
+
+            .ad,
+            .ad_global {
+                display: block;
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .ad {
+                margin-bottom: 36px;
+            }
+
+            .tags-container,
+            .category-container {
+                padding: 36px 0px;
+                display: flex;
+                column-gap: 16px;
+                row-gap: 8px;
+                flex-wrap: wrap;
+                z-index: 10;
+
+                a {
+                    color: $color_white;
+                    background-color: $color_brand;
+                    padding: 5px 22px;
+                    border-radius: 51px;
+                    opacity: 0.6;
+                }
+
+                a.active {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

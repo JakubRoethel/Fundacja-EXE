@@ -48,7 +48,7 @@ $sliderArray = get_field('slider_section');
                     </div>
                 <?php  } ?>
             </div>
-            <div class="sliders">
+            <div class="sliders-box">
                 <?php foreach ($sliderArray as $single_slide) {
                     $image_description = $single_slide['image_description'];
                     $image_id = $single_slide['image'];

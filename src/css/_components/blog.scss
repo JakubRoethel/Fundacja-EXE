@@ -1,20 +1,61 @@
 .site-main {
-    padding: 80px 100px 0px 100px;
+    padding: 150px 170px;
 
-    .blog-header{
+    @include bp($bp-mobile) {
+        padding: 100px 16px 50px 16px;
+    }
+
+    @include bp($bp-tablet) {
+        padding: 160px 32px 80px 32px;
+    }
+
+    .blog-header {
         .entry-title {
             font-weight: 600;
             color: $color_brand;
             margin-bottom: 80px;
+
+            @include bp($bp-mobile) {
+                margin-bottom: 30px;
+            }
         }
     }
-
-   
 
     .blog-posts {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 18px;
         grid-row-gap: 60px;
+
+        @include bp($bp-mobile) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-row-gap: 30px;
+        }
+
+        @include bp($bp-tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .pagination {
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 28px;
+
+        .page-numbers.current {
+            color: $color_brand;
+        }
+
+        .next.page-numbers, .prev.page-numbers {
+            color: $color_brand;
+
+            &:hover {
+                color: black;
+            }
+        }
     }
 }

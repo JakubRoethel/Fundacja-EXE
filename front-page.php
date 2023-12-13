@@ -7,5 +7,6 @@ get_template_part('views/how', 'we-support');
 get_template_part('views/home', 'contact-us');
 get_template_part('views/slider', 'one');
 get_template_part('views/slider', 'two');
+get_template_part('views/contact', 'form');
 
 get_footer();

@@ -1,49 +1,220 @@
+@mixin bp($map) {
+    $query: "";
+    @if map-has-key($map, min) {
+        $query: append($query, "(min-width: #{map-get($map, min)})");
+    }
+    @if map-has-key($map, min) and map-has-key($map, max) {
+        $query: append($query, "and");
+    }
+    @if map-has-key($map, max) {
+        $query: append($query, "(max-width: #{map-get($map, max)})");
+    }
+    @media screen and #{$query} {
+        @content;
+    }
+}
+
 .header {
-    min-height: 100px;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 100px;
-
-    .header_logo {
-        max-height: 70px;
+    position: relative;
+    z-index: 99;
+    .main_header {
+        min-height: 100px;
+        background-color: transparent;
         display: flex;
-        a {
-            display: block;
-            img {
-                height: 100%;
-            }
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 100px;
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+        @include bp($bp-mobile) {
+            display: none;
         }
-    }
+        @include bp($bp-tablet) {
+            padding: 15px 16px;
+        }
 
-    .menu_container{
-        ul {
+        .header_logo {
+            max-height: 70px;
             display: flex;
-            gap: 48px
-        }
-    }
+            a {
+                display: block;
+                img {
+                    height: 100%;
+                }
+            }
 
-    .button-wrapper {
-        background-color: $color_brand;
-        padding: 12px 35px;
-        border-radius:50px ;
-        border: 1px solid $color_brand;
-        &:hover {
-            background-color: $color_white;
-            
-
-            a{
-                color: $color_brand;
+            @include bp($bp-tablet) {
+                width: 10%;
             }
         }
 
+        .menu_container {
+            ul {
+                display: flex;
+                gap: 48px;
 
-        a{
-            color: $color_white;
+                @include bp($bp-tablet) {
+                    gap: 12px;
+                }
+            }
+
+            a {
+                font-weight: 600;
+
+                @include bp($bp-tablet) {
+                    font-size: 14px;
+                }
+            }
+
+            span {
+                color: $color_brand;
+                margin-left: 5px;
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+        }
+
+        .button-wrapper {
+            background-color: $color_brand;
+            padding: 12px 35px;
+            border-radius: 50px;
+            border: 1px solid $color_brand;
+            text-align: center;
+
+            @include bp($bp-tablet) {
+                width: 25%;
+                padding: 8px 30px;
+            }
+            &:hover {
+                background-color: $color_white;
+
+                a {
+                    color: $color_brand;
+                }
+            }
+
+            a {
+                color: $color_white;
+            }
+        }
+    }
+
+    .header_container_mobile {
+        display: none;
+        position: fixed;
+        width: 100%;
+
+        .mobile-header {
+            display: flex;
+            width: 100%;
+            padding: 20px 16px;
+            align-items: center;
+
+            .header_logo {
+                flex: 1;
+            }
+
+            .header__toggle {
+                position: relative;
+                background: none;
+                border: none;
+                border-radius: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 4px;
+                flex: 3;
+                .header__toggle__item {
+                    width: 30px;
+                    height: 2px;
+                    border-radius: 4px;
+                    transition: translate 0.2s ease-in;
+                    background-color: $color_brand;
+                }
+            }
+        }
+
+        .menu-header {
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            width: 240px;
+            position: fixed;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform: translateX(100%);
+            will-change: transform;
+            backface-visibility: hidden;
+            padding: 20px;
+            z-index: 100;
+            background: white;
+            transition: all 0.4s ease 0.4s;
+            display: flex;
+
+            .close-icon {
+                position: absolute;
+                top: 50px;
+            }
+
+            .navigation__list{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                a {
+                    font-size: 1.25rem;
+                    color: $color_brand;
+                    font-weight: 900;
+
+                    .menu-item-after-text{
+                        margin-left: 5px;
+                        color: black;
+                    }
+                }
+            }
+        }
+
+        @include bp($bp-mobile) {
+            display: inline-block;
         }
         
+        .navigation__overlay {
+            background: #000000;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            pointer-events: none;
+            width: 100vw;
+            height: 100vh;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.4s ease-in;
+        }
+
     }
-
-
 }
+
+.header.scroll .main_header, .header.scroll .header_container_mobile {
+    background: white;
+    opacity: 0.9;
+}
+
+.header--navigation-open .navigation__overlay {
+    transition: opacity 0.2s ease-in 0.1s !important;
+    pointer-events: all!important;
+    opacity: 0.49!important;
+    z-index: 3!important;
+    transform: translateX(0%) !important;
+}
+
+.header--navigation-open .menu-header {
+    transform: translateX(0) !important;
+    transition: all 0.5s ease-in-out;
+}
+
+
+
+    

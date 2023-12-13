@@ -1,5 +1,17 @@
 .how-we-support-section {
     padding: 126px 170px 0px 170px;
+    min-height: 820px;
+
+    @include bp($bp-mobile) {
+        padding: 50px 16px 0px 16px;
+        min-height: 1100px;
+    }
+
+    @include bp($bp-tablet) {
+        padding: 50px 32px 0px 32px;
+        min-height: 920px;
+    }
+
     .section-heading-wrapper {
         text-align: center;
         display: flex;
@@ -17,10 +29,16 @@
         .subtitle {
             color: $color_brand;
             font-weight: 600;
+            @include bp($bp-mobile) {
+                font-size: 1.25rem;
+            }
         }
 
         .title {
             font-weight: 700;
+            @include bp($bp-mobile) {
+                font-size: 1.75rem;
+            }
         }
 
         .short-description {
@@ -33,12 +51,21 @@
         display: flex;
         gap: 40px;
 
+        @include bp($bp-mobile) {
+            margin: 0px;
+            flex-direction: column;
+        }
         .slide-nav {
             flex: 1;
             display: flex;
             flex-direction: column;
             gap: 50px;
             padding-top: 48px;
+
+            @include bp($bp-mobile) {
+               gap: 25px;
+               padding-top: 24px;
+            }
 
             .slider-title-wrapper {
                 display: flex;
@@ -48,6 +75,9 @@
                 .numerator {
                     font-size: 62px;
                     font-weight: 700;
+                    @include bp($bp-mobile) {
+                        font-size: 28px;
+                     }
                 }
 
                 .title {
@@ -56,39 +86,41 @@
                     display: flex;
                     align-items: center;
                     -webkit-text-stroke: 1px $color_brand;
-                    color: transparent; 
-                }
+                    color: transparent;
 
+                    @include bp($bp-mobile) {
+                        font-size: 28px;
+                     }
+                }
             }
 
             .slider-title-wrapper.active {
                 .title {
                     color: $color_brand;
-                 }
+                }
             }
         }
 
-        .sliders {
+        .sliders-box {
             flex: 1;
             position: relative;
 
             .single-slide {
                 position: absolute;
                 opacity: 0;
-                transition: opacity 0.3s ease-in-out; 
-                .text-img-container{
+                transition: opacity 0.3s ease-in-out;
+                .text-img-container {
                     display: flex;
                     flex-direction: column;
                     gap: 16px;
                     .img-description {
-                        color: $color_brand
+                        color: $color_brand;
                     }
 
                     img {
                         object-fit: cover;
                     }
                 }
-
             }
 
             .single-slide.active-slide {

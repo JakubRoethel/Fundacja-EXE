@@ -1,0 +1,22 @@
+.legal {
+    padding: 150px 170px;
+
+
+    @include bp($bp-mobile) {
+        padding: 100px 16px 50px 16px;
+    }
+
+    @include bp($bp-tablet) {
+        padding: 160px 32px 80px 32px;
+    }
+
+    .entry-title {
+        font-weight: 600;
+        color: $color_brand;
+        margin-bottom: 80px;
+
+        @include bp($bp-mobile) {
+            margin-bottom: 30px;
+        }
+    }
+}

@@ -1,15 +1,69 @@
 .hero {
     height: 100vh;
     display: flex;
+    height: 100vh;
+    align-items: center;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: center !important;
+
+    @include bp($bp-mobile) {
+        background-size: cover !important;
+       }
+
+       @include bp($bp-tablet) {
+        height: 60vh;
+        background-size: cover !important;
+       }
+
     .content-wrapper {
-        flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 0px 0px 0px 160px;
+        max-width: 50%;
+        gap: 16px;
+
+        @include bp($bp-mobile) {
+            max-width: unset;
+            padding: 0px 0px 0px 16px;
+           }
+
+        @include bp($bp-tablet) {
+            max-width: 70%;
+            padding: 0px 0px 0px 30px;
+           }
+
+        h1 {
+            font-weight: 700;
+
+            @include bp($bp-mobile) {
+                font-size: 2rem;
+               }
+            .special-color-text {
+                color: $color_brand;
+            }
+        }
+
+        .button-wrapper {
+            background-color: $color_bg;
+            padding: 12px 35px;
+            border-radius:50px ;
+            border: 1px solid $color_bg;
+            margin-top: 16px;
+            align-self: flex-start;
+          
+    
+    
+            a{
+                color: $color_white;
+            }
+            
+        }
+
+       
+       
     }
 
-    .img-wrapper {
-        flex: 1;
-    }
+   
 }

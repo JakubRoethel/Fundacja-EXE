@@ -1,40 +1,131 @@
 .contact-us {
     padding: 198px 170px 0px 170px;
 
+
+    @include bp($bp-mobile) {
+        padding: 0px 16px 0px 16px;
+    }
+
+    @include bp($bp-tablet) {
+        padding: 0px 32px 0px 32px;
+    }
+
+    .contact-us-wrapper {
+        position: relative;
+        display: flex;
+
+        @include bp($bp-mobile) {
+           flex-direction: column-reverse;
+           align-items: flex-end;
+
+        }
+
+        @include bp($bp-tablet) {
+            flex-direction: column-reverse;
+            align-items: flex-end;
+ 
+         }
+
+
     .content-wrapper {
-        padding: 32px 67px;
+        padding: 32px 20% 32px 67px;
         background-color: $color_bg;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 90%;
+        gap: 150px;
+
+        @include bp($bp-mobile) {
+            flex-direction: column;
+            padding: 16px 32px;
+            width: 100%;
+            gap: unset;
+        }
+
+        @include bp($bp-tablet) {
+            flex-direction: column;
+            padding: 16px 32px;
+            width: 100%;
+            gap: unset;
+        }
 
         .text-container {
             .title,
             .description {
                 color: $color_white;
+                @include bp($bp-mobile) {
+                    text-align: center;
+                }
             }
 
             .title {
                 font-weight: 700;
+                @include bp($bp-mobile) {
+                    font-size: 1.75rem;
+                }
             }
         }
 
         .button-wrapper {
             background-color: $color_brand;
             padding: 12px 35px;
-            border-radius:50px ;
+            border-radius: 50px;
+            text-align: center;
+            @include bp($bp-mobile) {
+                margin-top: 16px;
+            }
+
+            @include bp($bp-tablet) {
+                margin-top: 32px;
+            }
+
             &:hover {
                 background-color: $color_white;
-    
-                a{
+
+                a {
                     color: $color_brand;
                 }
             }
 
-            a{
+            a {
                 color: $color_white;
             }
-            
         }
     }
+
+    .img_container {
+        position: absolute;
+        top: 10px;
+        bottom: 0;
+        margin: auto 0;
+        width: fit-content;
+        height: fit-content;
+        right: 0px;
+
+        img {
+            object-fit: contain;
+            height: auto;
+        }
+
+        @include bp($bp-mobile) {
+            position: unset;
+            width: 30%;
+            display: flex;
+            justify-content: right;
+            margin-bottom: -30px;
+            z-index: 99;
+        }
+
+        @include bp($bp-tablet) {
+            position: unset;
+            width: 30%;
+            display: flex;
+            justify-content: right;
+            margin-bottom: -70px;
+            z-index: 99;
+        }
+    }
+    }
+
 }

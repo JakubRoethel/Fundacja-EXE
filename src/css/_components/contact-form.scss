@@ -1,0 +1,175 @@
+.contact-form-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 126px;
+    @include bp($bp-mobile) {
+        padding-bottom: 50px;
+    }
+
+    .contact-form-container {
+        background-color: $color_bg;
+        padding: 39px 94px;
+        @include bp($bp-mobile) {
+            padding: 20px 16px;
+        }
+
+        .contact-form-heading {
+            text-align: center;
+            color: $color_white;
+            .subtitle {
+                @include bp($bp-mobile) {
+                    font-size: 1.25rem;
+                }
+            }
+
+            .title {
+                @include bp($bp-mobile) {
+                    font-size: 1.75rem;
+                }
+            }
+        }
+
+        .contact-form {
+            form p {
+                max-width: 615px;
+                display: flex;
+                flex-direction: column;
+
+                @include bp($bp-mobile) {
+                    max-width: unset;
+                }
+            }
+
+            input,
+            textarea {
+                padding: 12px 35px;
+                width: 100%;
+                resize: none;
+                font-family: Poppins, sans-serif;
+
+                &::placeholder {
+                    color: rgba(50, 145, 111, 0.35);
+                    font-weight: 700;
+                }
+            }
+
+            textarea {
+                margin-bottom: 15px;
+            }
+
+            form .wpcf7-response-output {
+                color: $color_white;
+                border-color: unset;
+                border: unset;
+            }
+
+            .wpcf7-checkbox {
+                span.wpcf7-list-item-label {
+                    color: $color_white;
+                    margin-left: 40px;
+                    @include bp($bp-mobile) {
+                        font-size: 12px;
+                        margin-left: 30px;
+                    }
+                }
+            }
+
+            input[type="checkbox"] {
+                position: absolute;
+                cursor: pointer;
+                width: 0px;
+                height: 0px;
+            }
+
+            input[type="checkbox"]:checked:before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 28px;
+                height: 28px;
+                border-radius: 20px;
+                background-color: white;
+                transition: all 0.2s linear;
+                @include bp($bp-mobile) {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            input[type="checkbox"]:before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                background-color: $color_white;
+                @include bp($bp-mobile) {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            input[type="checkbox"]:after {
+                content: "";
+                display: block;
+                width: 0px;
+                height: 0px;
+                border: solid $color_white;
+                border-width: 0 0px 0px 0;
+                -webkit-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                transform: rotate(180deg);
+                position: absolute;
+                top: 0px;
+                left: 50px;
+                transition: all 0.2s linear;
+            }
+
+            input[type="checkbox"]:checked:after {
+                content: "";
+                border: solid #32916f;
+                border-width: 0 5px 5px 0;
+                content: "";
+                display: block;
+                height: 18px;
+                left: 9px;
+                position: absolute;
+                top: 4px;
+                transform: rotate(45deg);
+                width: 11px;
+
+                @include bp($bp-mobile) {
+                    height: 15px;
+                    left: 6px;
+                    top: 2px;
+                    width: 9px;
+                }
+            }
+
+            input[type="submit"] {
+                margin-top: 25px;
+                width: 25%;
+                text-align: center;
+                align-self: center;
+                background-color: $color_brand;
+                padding: 12px 35px;
+                border-radius: 50px;
+                border: 1px solid $color_brand;
+                display: inline-block;
+                align-self: center;
+                color: $color_white;
+
+                @include bp($bp-mobile) {
+                    width: 35%;
+                }
+
+                &:hover {
+                    background-color: $color_white;
+                    color: $color_brand;
+                }
+            }
+        }
+    }
+}
