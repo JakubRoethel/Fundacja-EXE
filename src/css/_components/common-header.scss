@@ -17,9 +17,11 @@
 .header {
     position: relative;
     z-index: 99;
+    
     .main_header {
+        background-color: red;
         min-height: 100px;
-        background-color: transparent;
+        // background-color: transparent;
         display: flex;
         align-items: center;
         justify-content: space-between;

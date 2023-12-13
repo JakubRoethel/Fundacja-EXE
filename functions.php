@@ -75,12 +75,12 @@ function my_wp_nav_menu_objects( $items, $args ) {
 
 //update checker
 
-require 'plugin-update-checker/plugin-update-checker.php';
+require 'plugin-update-checker-5.3/plugin-update-checker.php';
 
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 $myUpdateChecker = PucFactory::buildUpdateChecker(
-    'https://github.com/JakubRoethel/Fundacja-EXE.git',
+    'https://github.com/JakubRoethel/Fundacja-EXE',
     __FILE__,
     'Fundacja-EXE'
 );
