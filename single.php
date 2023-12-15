@@ -101,7 +101,9 @@ get_header(); ?>
                             <?php echo wp_get_attachment_image($blog_single__post_global_ad_id , 'full'); ?>
                         </a>
                     <?php endif; ?>
+                    <p class="taxonomy-title"><?php echo "Tagi"?></p>
                     <div class="tags-container">
+                    
                         <?php
                         $all_tags = get_tags();
                         $current_post_tags = wp_get_post_tags(get_the_ID(), array('fields' => 'ids'));
@@ -114,7 +116,9 @@ get_header(); ?>
                         ?>
 
                     </div>
+                    <p class="taxonomy-title"><?php echo "Kategorie"?></p>
                     <div class="category-container">
+                        
                         <?php
                         $all_categories = get_categories();
                         $current_post_categories = wp_get_post_categories(get_the_ID(), array('fields' => 'ids'));

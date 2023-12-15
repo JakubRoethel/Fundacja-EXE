@@ -44,6 +44,10 @@
         display: flex;
         gap: 48px;
 
+        @include bp($bp-tablet) {
+            flex-direction: column-reverse;
+         }
+
         @include bp($bp-mobile) {
            flex-direction: column;
            gap: 24px;
@@ -58,6 +62,10 @@
                 flex: unset;
                 width: 100%;
                 height: 350px;
+             }
+
+             @include bp($bp-tablet) {
+                min-height: 600px;
              }
      
         }

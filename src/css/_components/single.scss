@@ -111,9 +111,15 @@
                 margin-bottom: 36px;
             }
 
+            .taxonomy-title {
+                font-size: 24px;
+                font-weight: 600;
+                padding-top: 36px;
+            }
+
             .tags-container,
             .category-container {
-                padding: 36px 0px;
+                padding: 16px 0px;
                 display: flex;
                 column-gap: 16px;
                 row-gap: 8px;

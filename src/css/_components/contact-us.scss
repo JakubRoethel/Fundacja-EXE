@@ -3,11 +3,13 @@
 
 
     @include bp($bp-mobile) {
-        padding: 0px 16px 0px 16px;
+        padding: 50px 16px 50px 16px;
+        margin-top: 32px;
     }
 
     @include bp($bp-tablet) {
         padding: 0px 32px 0px 32px;
+        margin-top: 100px;
     }
 
     .contact-us-wrapper {
@@ -38,6 +40,7 @@
 
         @include bp($bp-mobile) {
             flex-direction: column;
+            align-items: center;
             padding: 16px 32px;
             width: 100%;
             gap: unset;
@@ -48,9 +51,13 @@
             padding: 16px 32px;
             width: 100%;
             gap: unset;
+            align-items: flex-start;
         }
 
         .text-container {
+            @include bp($bp-tablet) {
+               width: 70%;
+            }
             .title,
             .description {
                 color: $color_white;
@@ -109,21 +116,15 @@
         }
 
         @include bp($bp-mobile) {
-            position: unset;
-            width: 30%;
-            display: flex;
-            justify-content: right;
-            margin-bottom: -30px;
-            z-index: 99;
+            display: none;
         }
 
         @include bp($bp-tablet) {
-            position: unset;
             width: 30%;
             display: flex;
             justify-content: right;
-            margin-bottom: -70px;
             z-index: 99;
+            top: 0px;
         }
     }
     }

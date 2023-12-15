@@ -4,12 +4,12 @@
 
     @include bp($bp-mobile) {
         padding: 50px 16px 0px 16px;
-        min-height: 1100px;
+
     }
 
     @include bp($bp-tablet) {
         padding: 50px 32px 0px 32px;
-        min-height: 920px;
+
     }
 
     .section-heading-wrapper {
@@ -51,6 +51,10 @@
         display: flex;
         gap: 40px;
 
+        @include bp($bp-tablet) {
+            flex-direction: column;
+        }
+
         @include bp($bp-mobile) {
             margin: 0px;
             flex-direction: column;
@@ -63,8 +67,12 @@
             padding-top: 48px;
 
             @include bp($bp-mobile) {
-               gap: 25px;
-               padding-top: 24px;
+                gap: 25px;
+                padding-top: 24px;
+            }
+
+            @include bp($bp-tablet) {
+                gap: 0px;
             }
 
             .slider-title-wrapper {
@@ -77,7 +85,7 @@
                     font-weight: 700;
                     @include bp($bp-mobile) {
                         font-size: 28px;
-                     }
+                    }
                 }
 
                 .title {
@@ -90,7 +98,7 @@
 
                     @include bp($bp-mobile) {
                         font-size: 28px;
-                     }
+                    }
                 }
             }
 
@@ -104,6 +112,14 @@
         .sliders-box {
             flex: 1;
             position: relative;
+
+            @include bp($bp-tablet) {
+                min-height: 500px;
+            }
+
+            @include bp($bp-mobile) {
+                min-height: 500px;
+            }
 
             .single-slide {
                 position: absolute;
@@ -119,6 +135,12 @@
 
                     img {
                         object-fit: cover;
+                        width: 100%;
+                        
+
+                        @include bp($bp-tablet) {
+                            height: auto;
+                        }
                     }
                 }
             }
